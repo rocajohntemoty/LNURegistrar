@@ -75,7 +75,7 @@
         	<p class="hiddenss-desktop"> Logged in as <a href="#"> John Temoty Roca </a> </p>
         	<li class="nav-header"> Transaction </li>
   			<li <?php if(isset($active) && $active === 1){ echo "class='active'"; }?>> <a href="<?php echo base_url(); ?>applicant/applydocuments"> <i class="icon-hand-right"></i> Apply Documents </a> </li>          
-            <li <?php if(isset($active) && $active === 2){ echo "class='active'"; }?>> <a href="<?php echo base_url(); ?>applicant/applicantionHistory" > <i class="icon-envelope"></i> Application History </a> </li>
+            <li <?php if(isset($active) && $active === 2){ echo "class='active'"; }?>> <a href="<?php echo base_url(); ?>applicant/applicationHistory" > <i class="icon-envelope"></i> Application History </a> </li>
             <li <?php if(isset($active) && $active === 3){ echo "class='active'"; }?>> <a href="<?php echo base_url(); ?>applicant/clearance" > <i class="icon-ok-circle"> </i> Clearance </a> </li>
         </ul>
     </div><!--/span3-->

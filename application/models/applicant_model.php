@@ -11,5 +11,8 @@
 							 ->get();
 			return $user->result();
 		}
+		public function getMyHistory( $user_id = null ){
+			return false;
+		}
 	}
 ?>

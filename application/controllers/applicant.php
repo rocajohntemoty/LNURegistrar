@@ -79,9 +79,11 @@
 			$this->load->view("templates/applicantView_template",$data);	
 		}
 		
-		public function applicantionHistory(){
+		public function applicationHistory(){
+			
+			$user_application_history	=	$this->applicant_model->getMyHistory( $this->user_id );
 			$data['active']	 = 2;
-			$data['content']	=	"applicant_inbox";
+			$data['content']	=	"applicant_history";
 			$this->load->view("templates/applicantView_template",$data);
 		}
 		
