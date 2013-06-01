@@ -9,10 +9,13 @@
 			
 			$data['content']	=	"accounting/index";
 			$this->load->view('templates/backend_template',$data);
+			
 		}
+		
 		public function login(){
 			$data['content']	=	"accounting/login";
 			$this->load->view('backend_views/osa/login');
 		}
+		
 	}
 ?>

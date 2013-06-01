@@ -14,5 +14,6 @@
 		public function getMyHistory( $user_id = null ){
 			return false;
 		}
+		
 	}
 ?>

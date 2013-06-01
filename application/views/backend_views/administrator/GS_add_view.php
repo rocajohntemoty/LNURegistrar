@@ -1,6 +1,6 @@
 <div class="row-fluid">
 	<div class="alert alert-info"> <strong>Note: </strong> Fields with <span style="color:red;">( * )</span> <span class="label label-warning">required.</span> </div>
-	<form class="form" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+	<form class="form" method="post" action="<?php echo base_url();?>admin_user/validate_user/?href=<?php echo $this->uri->segment(1)."/".$this->uri->segment(2);?>">
         <fieldset>
             <legend> Login Details </legend>
             <label> Username <span style="color:red;">( * )</span></label>
@@ -19,6 +19,6 @@
             <label> Last Password <span style="color:red;">( * )</span></label>
             <input type="text" name="lname"   placeholder="Last Name" /> <br/>
         </fieldset>
-        <input type="submit" class="btn btn-success" value="Save" />
+        <input  name="register_gsadmin"  type="submit" class="btn btn-success" value="Save" />
     </form>
 </div>

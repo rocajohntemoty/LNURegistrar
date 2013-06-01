@@ -26,6 +26,16 @@
           padding-right: 5px;
         }
       }
+	  .prettyprint {
+	  padding: 8px;
+	  background-color: #f7f7f9;
+	  border: 1px solid #e1e1e8;
+		}
+		.prettyprint.linenums {
+		  -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+			 -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+				  box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+		}
     </style>
     <link href="<?php echo base_url(); ?>/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>/assets/css/todc-bootstrap.css" rel="stylesheet">
@@ -70,7 +80,7 @@
         </ul>
     </div><!--/span3-->
     
-    <div class="span9">
+    <div class="span9 prettyprint">
     	
     
 

@@ -100,8 +100,6 @@
 					);
 					
 					$insert_certification	=	$this->db->insert('tbl_appforcertification',$app_for_tor_certification);
-				}else{
-					exit("Error: Administrator Problem. ");
 				}
 				
 				if(!empty($goodMoral)){

@@ -18,25 +18,24 @@
                         <th> Action </th>
                     </thead>
                     <tbody>
-                        <Tr>
-                            <td> 1 </td>
-                            <td> rocajohntemoty </td>
-                            <Td> John Temoty Homeres Roca</Td>
-                            <td>
-                                <a class="btn btn-primary" href="#"> Edit </a> &nbsp; 
-                                <a class="btn btn-danger" href="#">Delete</a>
-                            </td>
-                        </Tr>
-                        <Tr>
-                            <td> 1 </td>
-                            <td> rocajohntemoty </td>
-                            <Td> John Temoty Homeres Roca</Td>
-                            <td>
-                                <a class="btn btn-primary" href="#"> Edit </a> &nbsp; 
-                                <a class="btn btn-danger" href="#">Delete</a>
-                            </td>
-                        </Tr>
-                    </tbody>
+						<?php if(isset($cla) && !empty( $cla ) ){ ?>
+							<?php foreach( $cla as $key => $values ): ?>
+								<Tr>
+									<td> <?php echo $values->id; ?> </td>
+									<td>  <?php echo $values->username; ?></td>
+									<Td>  <?php echo $values->fname." ".$values->mname." ".$values->lname; ?></Td>
+									<td>
+										<a class="btn btn-primary" href="#"> Edit </a> &nbsp; 
+										<a class="btn btn-danger" href="#">Delete</a>
+									</td>
+								</Tr>
+							<?php endforeach; ?>
+						<?php	}else{ ?>
+									<tr>
+										<Td colspan=5> <span class='label label-warning'> No Records Found. </span> </td>
+									</tr>
+						<?php	} ?>
+					</tbody>
                 </Table>
             </div>
         </div>
@@ -59,25 +58,24 @@
                         <th> Action </th>
                     </thead>
                     <tbody>
-                        <Tr>
-                            <td> 1 </td>
-                            <td> rocajohntemoty </td>
-                            <Td> John Temoty Homeres Roca</Td>
-                            <td>
-                                <a class="btn btn-primary" href="#"> Edit </a> &nbsp; 
-                                <a class="btn btn-danger" href="#">Delete</a>
-                            </td>
-                        </Tr>
-                        <Tr>
-                            <td> 1 </td>
-                            <td> rocajohntemoty </td>
-                            <Td> John Temoty Homeres Roca</Td>
-                            <td>
-                                <a class="btn btn-primary" href="#"> Edit </a> &nbsp; 
-                                <a class="btn btn-danger" href="#">Delete</a>
-                            </td>
-                        </Tr>
-                    </tbody>
+						<?php if(isset($ugl) && !empty( $ugl ) ){ ?>
+							<?php foreach( $ugl as $key => $values ): ?>
+								<Tr>
+									<td> <?php echo $values->id; ?> </td>
+									<td>  <?php echo $values->username; ?></td>
+									<Td>  <?php echo $values->fname." ".$values->mname." ".$values->lname; ?></Td>
+									<td>
+										<a class="btn btn-primary" href="#"> Edit </a> &nbsp; 
+										<a class="btn btn-danger" href="#">Delete</a>
+									</td>
+								</Tr>
+							<?php endforeach; ?>
+						<?php	}else{ ?>
+									<tr>
+										<Td colspan=5> <span class='label label-warning'> No Records Found. </span> </td>
+									</tr>
+						<?php	} ?>
+					</tbody>
                 </Table>
             </div>
         </div>

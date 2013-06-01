@@ -29,8 +29,8 @@
                             <input type="radio" name="typeofApp" <?php if( $typeofApp == 2 ){ echo 'checked="checked"'; }?>  value="2" /> Renewal <br /><br /><br />
                         </div>
                         <div class="span6">
-                        	<?php $tor	=	set_value('tor'); ?>
-                        	<input type="checkbox" name="tor" value=1 <?php if( $tor == 1 ){ echo 'checked="checked"'; }?> />
+							<?php $tor	=	isset($_POST['tor'])?$_POST['tor']:null; ?>
+                        	<input type="checkbox" name="tor" value="1" <?php if( !empty($tor) ){ echo 'checked="checked"'; }?> />
                                     &nbsp; Transcript of Records <br/><br/>
                                     <?php 
 										$employment		   			 =	set_value('employment');
@@ -56,7 +56,7 @@
 							?>
                             
                             <input type="checkbox" name="certification" value=1 <?php if( $certification == 1 ){ echo 'checked="checked"'; }?> />&nbsp; Certification <i> ( Please Specify )</i> <br /><br />
-                            <textarea name="specifyCertification" > <?php if( !empty($certificaitons) ){ echo $certificaitons; }?></textarea>
+                            <textarea name="specifyCertification" ><?php if( !empty($certificaitons) ){ echo $certificaitons; }?></textarea>
                             <br />
                             <input <?php if(!empty($gm)){ echo 'disabled="disabled"'; }?> type="checkbox" name="goodMoral" value=1 <?php if( $goodMoral == 1 ){ echo 'checked="checked"'; }?> />&nbsp; <?php if(!empty($gm)){ echo "<span class='label label-warning'>Your application for Good Moral is being processed.</span>"; }else{ echo "<span class='label label-info'>Good Moral</span>";}?>                           
                         </div>

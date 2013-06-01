@@ -1,8 +1,9 @@
 <?php
 	Class Administrator extends CI_Controller{
 		
-		public function __cosntruct(){
+		public function __construct(){
 			parent::__construct();
+			$this->load->model('administrator_model');
 		}
 		
 		public function index(){
@@ -80,6 +81,7 @@
 					$this->load->view('templates/admin_template',$data);
 					break;
 				default:
+					$data['users']		=	$this->get_users( 'tbl_accounting' );
 					$data['content']	=	"accounting_view";
 					$this->load->view('templates/admin_template',$data);
 					break;
@@ -92,10 +94,13 @@
 					$this->load->view('templates/admin_template',$data);
 					break;
 				case "add-new-undergraduate-library-administrator":
+					
 					$data['content']	=	"undergradlibraryAdmin_add_view";
 					$this->load->view('templates/admin_template',$data);
 					break;
 				default:
+					$data['cla']		=	$this->get_users( 'tbl_gradlibadmin' );
+					$data['ugl']		=	$this->get_users( 'tbl_undergradlibadmin' );
 					$data['content']	=	"libraryAdmin_view";
 					$this->load->view('templates/admin_template',$data);
 					break;
@@ -108,6 +113,7 @@
 					$this->load->view('templates/admin_template',$data);
 					break;
 				default:
+					$data['users']		=	$this->get_users( 'tbl_registrar' );
 					$data['content']	=	"registrar_view";
 					$this->load->view('templates/admin_template',$data);
 					break;
@@ -120,21 +126,31 @@
 					$this->load->view('templates/admin_template',$data);
 					break;
 				default:
+					$data['users']		=	$this->get_users( 'tbl_osa' );
 					$data['content']	=	"OSA_view";
 			$this->load->view('templates/admin_template',$data);
 					break;
 			}
 		}
 		public function graduateschoolmanager( $view = null ){
+			
 			switch(strtolower($view)){
 				case "add-new-graduates-school-administrator":
 					$data['content']	=	"GS_add_view";
 					$this->load->view('templates/admin_template',$data);
 					break;
 				default:
+					$data['users']		=	$this->get_users( 'tbl_gsadmin' );
 					$data['content']	=	"GS_view";
 					$this->load->view('templates/admin_template',$data);
 					break;
+			}
+		}
+		private function get_users( $tbl_name = null ){
+			if(!empty( $tbl_name )){
+				
+				$users	=	$this->administrator_model->get_user( $tbl_name );
+				return $users;
 			}
 		}
 	}
