@@ -71,16 +71,18 @@
 									 );
 			$data['css']		= array("public/css/datepicker.css");
 			$data['active']	 = 1;
+			
 			$data['content']	=	"applydocuments";
 			$check_application	=	$this->application_model->check_user_app( $this->user_id );
 			$data['checker']	= $check_application;
-			//echo "<pre>",print_r( $check_application ),"</pre>";
-			//echo "<pre>",print_r( $check_application['check_user_tor_applied_furtherstud'][0]->count),"</pre>";
 			$this->load->view("templates/applicantView_template",$data);	
 		}
 		
 		public function applicationHistory(){
 			
+			$data['app_for_diploma']	=	$this->applicant_model->app_for_diploma( $this->user_id );
+			$data['app_for_certification']	=	$this->applicant_model->app_for_certification( $this->user_id );
+			$data['app_for_tor']	=	$this->applicant_model->app_for_tor( $this->user_id );
 			$user_application_history	=	$this->applicant_model->getMyHistory( $this->user_id );
 			$data['active']	 = 2;
 			$data['content']	=	"applicant_history";

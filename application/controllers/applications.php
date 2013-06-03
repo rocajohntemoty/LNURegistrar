@@ -78,6 +78,34 @@
 				show_404();
 			}
 		}
+		public function edituserlnuhistory(){
+		
+			$this->load->library('form_validation');
+			
+			$this->form_validation->set_rules('course','Course','required');
+			$this->form_validation->set_rules('numsemsandsums','Number of Summer and Semesters','required|is_numeric');
+			$this->form_validation->set_rules('fad','First Attendance in LNU field','required');
+			$this->form_validation->set_rules('lad','Last Attendance in LNU field','required');
+			$this->form_validation->set_rules('dog','Date Of Graduation field','required');
+			
+			$this->form_validation->set_error_delimiters('<div class="alert alert-danger">','</div>');
+			
+			if($this->form_validation->run() ==  false){
+					$data['content']	= "userlnuHistory";
+					$this->load->view("templates/applicantView_template",$data);
+			}else{
+				$id	=	$this->encrypt->decode($this->session->userdata('userDataId'));
+				
+				$editLog	=	$this->application_model->edituserlnuhistory( $id );
+				
+				if($editLog){	
+					echo "Success";
+				}else{
+					echo "Failed to edit!";
+				}
+			}
+			
+		}
 		public function checkoldpassword($password = null){
 			$this->load->library('form_validation');
 			$id	=	$this->encrypt->decode($this->session->userdata('userDataId'));

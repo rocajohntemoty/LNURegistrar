@@ -38,10 +38,10 @@
 			);
 			$this->db->where('id',$id);
 			$updateLog	= $this->db->update('tbl_applicant',$userData);
-					 		
 			
 			return $updateLog;
 		}
+		
 		public function getUserpass($id = null ){
 			$userPass	=	$this->db->select('password')
 										->from('tbl_applicant')
@@ -50,6 +50,30 @@
 										->get();
 			return $userPass->result();
 		}
+		
+		public function edituserlnuhistory( $user_id	=	null ){
+			$course	=	$this->input->post('course');
+			$fad	=	$this->input->post('fad');
+			$numsemsandsums	=	$this->input->post('numsemsandsums');
+			$majorspecialization	=	$this->input->post('majorspecialization');
+			$lad	=	$this->input->post('lad');
+			$dog	=	$this->input->post('dog');
+			
+			$datas	=	array(
+				'course' => $course,
+				'majorspecialization' => $majorspecialization,
+				'firstattendance' => $fad,
+				'lastattendance' => $lad,
+				'numofsemsandsums' => $numsemsandsums,
+				'dogInLNU' => $dog
+			);
+			
+			$this->db->where('id',$user_id);
+			$log	=	$this->db->update('tbl_applicant',$datas);
+			
+			return $log;
+		}
+		
 		public function editEducationalBackground( $id = null ){
 			
 			$nameOfElemSchool			=	$this->input->post('nameOfElemSchool');
